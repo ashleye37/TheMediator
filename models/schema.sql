@@ -13,3 +13,10 @@ CREATE TABLE `photos` (
   'userId' VARCHAR(55),
 	PRIMARY KEY ( `id` )
 );
+
+CREATE TABLE 'users' (
+  'userId' INT(11) AUTO_INCREMENT NOT NULL,
+  'basicCount' INT NOT NULL SET DEFAULT 0,
+  'weirdCount', INT NOT NULL SET DEFAULT 0,
+  PRIMARY KEY('userId')
+);
