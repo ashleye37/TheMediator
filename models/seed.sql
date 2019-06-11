@@ -1,4 +1,4 @@
- USE mediator;
+ USE ygghtv7acsr0i70p;
  
  INSERT INTO photos (primaryPath, secondPath) VALUES
 
