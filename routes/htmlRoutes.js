@@ -21,6 +21,18 @@ module.exports = function(app) {
   });
 
   //NEED A PAGE AND ROUTE VOTE PAGE
+  //POPULATE VOTE PAGE
+    app.get("/vote/:id", function(req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+      res.render("vote", {
+        msg: "Ready to vote?!",
+        example: dbExample
+      });
+    });
+  });
+
+
+
 
    // Load profile page and pass in an profile by id
   app.get("/profile/:id", function(req, res) {
