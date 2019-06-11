@@ -1,5 +1,20 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS mediator;
+CREATE DATABASE mediator;
+USE mediator;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE photos (
+  id INT( 11 ) AUTO_INCREMENT NOT NULL,
+  primaryPath VARCHAR(55),
+  secondPath VARCHAR(55) NOT NULL,
+  primaryWins INT NOT NULL DEFAULT 0,
+  secondWins INT NOT NULL DEFAULT 0,
+  userId VARCHAR(55),
+  PRIMARY KEY ( `id` )
+);
+
+CREATE TABLE users (
+  userId INT(11) AUTO_INCREMENT NOT NULL,
+  basicCount INT NOT NULL DEFAULT 0,
+  weirdCount INT NOT NULL DEFAULT 0,
+  PRIMARY KEY(`userId`)
+);
