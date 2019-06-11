@@ -2,6 +2,8 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var authRoutes = require("./routes/auth-routes");
+var passportSetup = require("./config/passport-setup");
+var keys = require("./config/keys");
 
 var db = require("./models");
 
@@ -13,6 +15,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/auth", authRoutes);
+
+// connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () => {
+  console.log("Connected to MongoDB");
+});
 
 // Handlebars
 app.engine(
