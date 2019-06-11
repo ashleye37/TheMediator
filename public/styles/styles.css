@@ -8,9 +8,12 @@ body{
 }
 
 nav {
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 20px;
   justify-content: center;
   align-content: center;
-  
+
 }
 
 .list-group-item {
