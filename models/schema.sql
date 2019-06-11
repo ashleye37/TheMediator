@@ -3,15 +3,13 @@ CREATE DATABASE mediator;
 USE mediator;
 
 CREATE TABLE photos (
-	id INT( 11 ) AUTO_INCREMENT NOT NULL,
-	photoPath VARCHAR(55) NOT NULL,
-	wins INT NOT NULL DEFAULT 0,
-	losses INT NOT NULL DEFAULT 0,
-	category VARCHAR(20),
-  pair BOOLEAN DEFAULT false,
-  pairPath VARCHAR(55),
+  id INT( 11 ) AUTO_INCREMENT NOT NULL,
+  primaryPath VARCHAR(55),
+  secondPath VARCHAR(55) NOT NULL,
+  primaryWins INT NOT NULL DEFAULT 0,
+  secondWins INT NOT NULL DEFAULT 0,
   userId VARCHAR(55),
-	PRIMARY KEY ( `id` )
+  PRIMARY KEY ( `id` )
 );
 
 CREATE TABLE users (
