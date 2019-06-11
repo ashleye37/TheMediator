@@ -20,6 +20,8 @@ module.exports = function(app) {
     });
   });
 
+  //NEED A PAGE AND ROUTE VOTE PAGE
+
    // Load profile page and pass in an profile by id
   app.get("/profile/:id", function(req, res) {
     db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
