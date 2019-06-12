@@ -32,6 +32,16 @@ module.exports = function(app) {
   });
 
 
+  app.get("/battle", function(req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+      res.render("vote", {
+        msg: "Time to battle!!",
+        example: dbExample
+      });
+    });
+  });
+
+
 
 
    // Load profile page and pass in an profile by id
