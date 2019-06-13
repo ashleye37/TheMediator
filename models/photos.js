@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-  var Photo = sequelize.define("Example", {
+  var Photo = sequelize.define("Photo", {
     primaryPath: DataTypes.STRING,
     secondPath: DataTypes.STRING,
     primaryWins: DataTypes.INTEGER,
     secondWins: DataTypes.INTEGER,
     userId: DataTypes.STRING
   });
-  return Example;
+  return Photo;
 };
