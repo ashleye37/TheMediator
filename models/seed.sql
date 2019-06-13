@@ -2,6 +2,7 @@
  
  INSERT INTO photos (primaryPath, secondPath) VALUES
 
+
 ('public/assets/img/1-otter.jpg', 'public/assets/img/1-penguin.jpg'),   
 ('public/assets/img/2-In-n-out.jpg', 'public/assets/img/2-dicks-burgers.jpg'),  
 ('public/assets/img/3-pho.jpg', 'public/assets/img/3-ramen.jpg'),
@@ -13,5 +14,3 @@
 ('public/assets/img/14-apple.png', 'public/assets/img/14-windows.jpg'),
 ('public/assets/img/15-dem.jpg', 'public/assets/img/15-repub.jpg') 
 
-
- 

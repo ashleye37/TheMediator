@@ -1,0 +1,10 @@
+<header>
+  <h1>Welcome to your profile, <%= user.username %></h1>
+</header>
+<main>
+  <p>
+    {{!-- We should be pulling information from SQL with all the photos they have been adding and the stats associated. --}}
+    <img src="<%= user.thumbnail %>">;
+    <p>This is your user thumbnail picture from google.</p>
+  </p>
+</main>
