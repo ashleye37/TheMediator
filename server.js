@@ -2,7 +2,7 @@ require("dotenv").config();
 var authRoutes = require("./routes/auth-routes");
 var profileRoutes = require("./routes/profile-routes");
 var passportSetup = require("./config/passport-setup");
-var keys = require("./config/keys");
+// var keys = require("./config/keys");
 var db = require("./models");
 var env = require('dotenv').load();
 
@@ -48,9 +48,9 @@ app.listen(PORT, function(err) {
 // }));
 
 // Initialize passport
-app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Handlebars
 app.engine(
