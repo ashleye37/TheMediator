@@ -2,7 +2,7 @@ require("dotenv").config();
 var authRoutes = require("./routes/auth-routes");
 var profileRoutes = require("./routes/profile-routes");
 var passportSetup = require("./config/passport-setup");
-// var keys = require("./config/keys");
+var keys = require("./config/keys");
 var db = require("./models");
 var env = require('dotenv');
 
@@ -32,14 +32,8 @@ app.use("/profile", profileRoutes);
 
 // create home route
 app.get('/', function(req, res) {
-  res.send('Welcome to Passport with Sequelize');
+  res.render('index');
 });
-
-// app.listen(PORT, function(err) {
-//   if (!err)
-//       console.log("Site is live");
-//   else console.log(err)
-// });
 
 // // Managing cookie session.
 // app.use(cookieSession({
@@ -48,9 +42,9 @@ app.get('/', function(req, res) {
 // }));
 
 // Initialize passport
-// app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Handlebars
 app.engine(
