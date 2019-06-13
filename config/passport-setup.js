@@ -2,6 +2,7 @@ var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth2");
 var keys = require("./keys.js");
 var User = require("../models/user-model.js");
+var Sequelize = require("sequelize");
 
 // serializing user using passport.
 passport.serializeUser((user, done) => {

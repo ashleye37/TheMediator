@@ -11,7 +11,4 @@
 ("(__dirname) + 'public/assets/img/12-hulu.jpg'", "(__dirname) + 'public/assets/img/12-netflix.png"), 
 ("(__dirname) + 'public/assets/img/13-ufc.jpg'", "(__dirname) + 'public/assets/img/13-bellator.png'"),
 ("(__dirname) + 'public/assets/img/14-apple.png'", "(__dirname) + 'public/assets/img/14-windows.jpg'"),
-("(__dirname) + 'public/assets/img/15-dem.jpg'", "(__dirname) + 'public/assets/img/15-repub.jpg'") 
-
-
- 
+("(__dirname) + 'public/assets/img/15-dem.jpg'", "(__dirname) + 'public/assets/img/15-repub.jpg'")

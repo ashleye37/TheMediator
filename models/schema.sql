@@ -12,8 +12,11 @@ CREATE TABLE photos (
   PRIMARY KEY ( `id` )
 );
 
-CREATE TABLE users (
+CREATE TABLE user (
   userId INT(11) AUTO_INCREMENT NOT NULL,
+  googleId INT(30),
+  username VARCHAR (30) NOT NULL,
+  thumbnail VARCHAR(55),
   basicCount INT NOT NULL DEFAULT 0,
   weirdCount INT NOT NULL DEFAULT 0,
   PRIMARY KEY(`userId`)

@@ -1,48 +1,56 @@
 require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
 var authRoutes = require("./routes/auth-routes");
 var profileRoutes = require("./routes/profile-routes");
 var passportSetup = require("./config/passport-setup");
-var mongoose = require("mongoose");
 var keys = require("./config/keys");
-var cookieSession = require("cookie-session");
-var passport = require("passport");
-var bodyParser = require("body-parser");
-
 var db = require("./models");
+var env = require('dotenv').load();
+
+var express = require("express");
+var exphbs = require("express-handlebars");
+// var cookieSession = require("cookie-session");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+var passport = require("passport");
+var session = require("express-session");
+var bodyParser = require("body-parser");
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+//For BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // Using auth-routes.
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 
 // create home route
-app.get("/", (req, res) => {
-  res.render("home", {user: req.user});
-})
+app.get('/', function(req, res) {
+  res.send('Welcome to Passport with Sequelize');
+});
 
-// Managing cookie session.
-app.use(cookieSession({
-  maxAge: 24 * 60 * 60 * 1000,
-  keys:[keys.session.cookieKey]
-}));
+app.listen(PORT, function(err) {
+  if (!err)
+      console.log("Site is live");
+  else console.log(err)
+});
+
+// // Managing cookie session.
+// app.use(cookieSession({
+//   maxAge: 24 * 60 * 60 * 1000,
+//   keys:[keys.session.cookieKey]
+// }));
 
 // Initialize passport
+app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
-
-// connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
-  console.log("Connected to MongoDB");
-});
 
 // Handlebars
 app.engine(
