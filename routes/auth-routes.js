@@ -6,8 +6,6 @@ router.get("/login", (req, res) => {
   res.render("login", {user: req.user});
 });
 
-
-
 // Set up logout route
 router.get("/logout", (req, res) => {
   // Handle with passport
