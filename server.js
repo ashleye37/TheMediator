@@ -5,10 +5,8 @@ var passportSetup = require("./config/passport-setup");
 var keys = require("./config/keys");
 var db = require("./models");
 var env = require('dotenv');
-
 var express = require("express");
 var exphbs = require("express-handlebars");
-// var cookieSession = require("cookie-session");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -35,18 +33,13 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-// // Managing cookie session.
-// app.use(cookieSession({
-//   maxAge: 24 * 60 * 60 * 1000,
-//   keys:[keys.session.cookieKey]
-// }));
-
 // Initialize passport
-app.use(session({ secret: keys.session.cookieKey,resave: true, saveUninitialized:true})); // session secret
+app.use(session({ secret: "theMediatorisawesome",resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Handlebars
+app.set("views", "./views")
 app.engine(
   "handlebars",
   exphbs({
@@ -58,6 +51,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+ 
 
 var syncOptions = { force: false };
 
