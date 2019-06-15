@@ -3,3 +3,7 @@ keys.js
 config.json
 324b03a9c314ed5b5ca537a82f8d094701834ab3
 .env
+public/assets/img/.DS_Store
+.DS_Store
+public/.DS_Store
+public/assets/.DS_Store
