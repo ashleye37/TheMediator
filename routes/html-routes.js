@@ -22,22 +22,12 @@ module.exports = function(app) {
 
   //NEED A PAGE AND ROUTE VOTE PAGE
   //POPULATE VOTE PAGE
-    app.get("/vote", function(req, res) {
-      db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("vote", {
-        msg: "Ready to vote?!"
-      });
-    });
+
+  
+
+  app.get("/vote", function(req, res) {
+    res.render("vote");
   });
-
-
-  // app.get("/battle", function(req, res) {
-  //   db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("battle", {
-  //       msg: "Time to battle!!"
-  //     });
-  //   });
-  // });
 
 
   app.get("/battle", function(req, res) {
