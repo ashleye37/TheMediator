@@ -9,6 +9,10 @@ body{
 h2, h3{
   text-align: center;
 }
+
+.icon{
+  text-align: center;
+}
 nav {
   margin-right: 20%;
   margin-left: 20%;
