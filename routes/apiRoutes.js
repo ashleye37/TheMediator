@@ -20,4 +20,14 @@ module.exports = function (app) {
       res.json(photos);
     });
   });
+
+  // Update scores
+  app.put("/api/photos", function(req, res) {
+    db.Photo.update({
+      primaryWins: req.body.primaryWins,
+      secondWins: req.body.secondWins
+    }).then(function(photos){
+      res.json(photos);
+    });
+  });
 };
