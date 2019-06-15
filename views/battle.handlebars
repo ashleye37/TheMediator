@@ -3,18 +3,23 @@
 </div>
 
 <div class="row">
+
+
   <div class="col-lg-6" id="left_image">
     <div class="form-group">
-    <label for="exampleFormControlFile1">Your first image to compare: </label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <label for="exampleFormControlFile1">Your first image to compare: </label>
+      <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+    </div>
   </div>
-  </div>
+
+
   <div class="col-lg-6" id="right_image">
     <div class="form-group">
-    <label for="exampleFormControlFile1">Your second image to compare:</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <label for="exampleFormControlFile1">Your second image to compare:</label>
+      <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+    </div>
   </div>
-  </div>
+
 </div>
 
 {{!-- on submit click
