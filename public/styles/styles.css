@@ -12,7 +12,6 @@ lavender: #E6E6FA
 
 body{
   height: 100%;
-
   background-color: #EBEBFF;
   font-family: 'Special Elite', cursive;
   color: #4f4f80;
@@ -50,11 +49,11 @@ nav {
 
 };
 
-.card-img-top{
-  max-width: 1000px;
+.card {  
+  max-width: 800px;
   
   box-shadow: 10px 10px 5px grey;
-
 }
+
 
 
