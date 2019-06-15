@@ -18,7 +18,7 @@ body{
   color: #4f4f80;
 
 }
-h2, h3{
+h1, h2, h3{
   text-align: center;
 }
 nav {
@@ -50,7 +50,7 @@ nav {
 
 };
 
-.card-img-top {
+#leftimage, #rightimage {
   max-height: 250px;
   
   box-shadow: 10px 10px 5px grey;
