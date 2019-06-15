@@ -6,7 +6,9 @@ body{
   color: #4f4f80;
 
 }
-
+h2, h3{
+  text-align: center;
+}
 nav {
   margin-right: 20%;
   margin-left: 20%;
@@ -20,6 +22,21 @@ nav {
   line-height: 2.5;
 }
 
+.table{
+  /* border: 5px solid #4F4F80; */
+  border-radius: 14px;
+  margin: 15px;
+
+}
+.btn{
+  background-color: #4f4f80;
+    font-family: 'Special Elite', cursive;
+    font-size: large;
+    color: #EBEBFF;
+    width: 100%;
+    margin: 5px;
+
+};
 
 /* 
 colors:
