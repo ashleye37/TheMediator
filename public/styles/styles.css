@@ -48,7 +48,21 @@ nav {
     width: 100%;
     margin: 5px;
 
-};
+}
+
+/* inverse colors on hover */
+.btn:hover {
+  color: #BCBCCC;
+  border-color: currentColor;
+  background-color: white;
+}
+
+/* make sure we have a visible focus ring */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4f4f80,
+    0 0 0 1.5px #BCBCCC;
+}
 
 .card {  
   max-width: 800px;
