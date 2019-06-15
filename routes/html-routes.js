@@ -12,35 +12,27 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  /* app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
       });
     });
-  });
+  }); */
 
   //NEED A PAGE AND ROUTE VOTE PAGE
   //POPULATE VOTE PAGE
-    app.get("/vote", function(req, res) {
-      db.Example.findAll({}).then(function(dbExamples) {
-      res.render("vote", {
-        msg: "Ready to vote?!",
-        example: dbExample
-      });
-    });
+
+  
+
+  app.get("/vote", function(req, res) {
+    res.render("vote");
   });
 
 
   app.get("/battle", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("battle", {
-        msg: "Time to battle!!",
-        example: dbExample
-      });
-    });
+    res.render("battle");
   });
-
 
 
 

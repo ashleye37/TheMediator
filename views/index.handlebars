@@ -6,39 +6,7 @@
         <h2><i class="fas fa-gavel"></i> The Mediator Home Page! <i class="fas fa-balance-scale"></i></h2>
 
         <form class="clearfix mb-4" action="POST">
-          <!-- make 2 navigation 'cards' to navigate to vote/battle pages  -->
-
-
-          {{!-- <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-body">
-
-                <a href="/vote"><i class="fas fa-person-booth fa-5x"></i></a>
-
-                <a href="/vote" class="btn btn-secondary orange-background"> VOTE <i class="fas fa-vote-yea"></i></i></a>
-
-              </div>
-            </div>
-
-
-
-          </div> --}}
-
-          {{!-- <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-body">
-
-                <a href="/battle"><i class="fas fa-gamepad fa-5x"></i></a>
-
-                <a href="/battle" class="btn btn-secondary orange-background"> BATTLE <i class="fas fa-gamepad"></i></a>
-
-              </div>
-            </div>
-
-
-            
-          </div> --}}
-          <div class="row icon">
+          <div class="row">
             <div class="col-lg-12">
               <img src="../public/assets/img/main-icon.jpg">
             </div>
@@ -52,40 +20,8 @@
             <div class="col-lg-6">
               <a href="/battle" class="btn btn-secondary orange-background"> BATTLE <i class="fas fa-gamepad"></i></a>
             </div>
-
-
           </div>
-
-
-
-
-
-
-          {{!-- <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <i class="fas fa-balance-scale fa-9x"></i>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        
-        --}}
         </form>
-
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
       </div>
     </div>
   </div>
