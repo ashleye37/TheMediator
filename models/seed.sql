@@ -1,6 +1,6 @@
  USE ygghtv7acsr0i70p;
  
- INSERT INTO photos (primaryPath, secondPath) VALUES
+ INSERT INTO Photos (primaryPath, secondPath) VALUES
 
 
 ('public/assets/img/1-otter.jpg', 'public/assets/img/1-penguin.jpg'),   

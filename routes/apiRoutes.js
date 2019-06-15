@@ -1,12 +1,11 @@
 var db = require("../models");
+var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   // Get all examples
   app.get("/api/photos", function(req, res) {
     db.Photo.findOne({
-      order: [
-        Sequelize.fn( 'RAND' ),
-      ]
+      order: Sequelize.literal('rand()')
     }).then(function(photos) {
       res.json(photos);
     });
