@@ -51,8 +51,10 @@ nav {
 };
 
 #leftimage, #rightimage {
-  max-height: 250px;
+  max-height: 100px;
   
   box-shadow: 10px 10px 5px grey;
 
 }
+
+
