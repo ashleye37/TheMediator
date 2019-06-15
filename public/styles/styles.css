@@ -50,6 +50,9 @@ nav {
 
 };
 
-.card {
-  size: 50%;
+.card-img-top {
+  max-height: 250px;
+  
+  box-shadow: 10px 10px 5px grey;
+
 }
