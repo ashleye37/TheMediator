@@ -50,6 +50,6 @@ nav {
 
 };
 
-#leftvoteimage {
-  margin-left: 20px
+.card {
+  size: 50%;
 }
