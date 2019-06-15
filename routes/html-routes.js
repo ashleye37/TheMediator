@@ -31,14 +31,18 @@ module.exports = function(app) {
   });
 
 
-  app.get("/battle", function(req, res) {
-    db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("battle", {
-        msg: "Time to battle!!"
-      });
-    });
-  });
+  // app.get("/battle", function(req, res) {
+  //   db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  //     res.render("battle", {
+  //       msg: "Time to battle!!"
+  //     });
+  //   });
+  // });
 
+
+  app.get("/battle", function(req, res) {
+    res.render("battle");
+  });
 
 
 
