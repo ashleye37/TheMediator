@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/photos", function(req, res) {
-    db.Photo.find({
+    db.Photo.findOne({
       order: [
         Sequelize.fn( 'RAND' ),
       ]
