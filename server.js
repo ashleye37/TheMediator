@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 // Using auth-routes.
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
-app.use("/vote",html-routes);
-app.use("/battle",html-routes);
+//app.use("/vote",html-routes);
+//app.use("/battle",html-routes);
 
 // create home route
 app.get('/', function(req, res) {
