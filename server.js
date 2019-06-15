@@ -1,25 +1,25 @@
-require("dotenv").config();
-var authRoutes = require("./routes/auth-routes");
-var profileRoutes = require("./routes/profile-routes");
-var passportSetup = require("./config/passport-setup");
-var db = require("./models");
-var env = require('dotenv');
 var express = require("express");
-var exphbs = require("express-handlebars");
-
 var app = express();
-var PORT = process.env.PORT || 3000;
-
 var passport = require("passport");
 var session = require("express-session");
 var bodyParser = require("body-parser");
+require("dotenv").config();
+var exphbs = require("express-handlebars");
+var profileRoutes = require("./routes/profile-routes");
+var passportSetup = require("./config/passport-setup");
+var db = require("./models");
+var authRoutes = require("./routes/auth-routes");
+
+var PORT = process.env.PORT || 3000;
+var session = require("express-session");
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-//For BodyParser
+//For BodyParser and CookieSession-Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

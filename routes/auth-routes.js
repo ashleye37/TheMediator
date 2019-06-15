@@ -10,6 +10,7 @@ router.get("/login", (req, res) => {
 router.get("/logout", (req, res) => {
   // Handle with passport
   req.logout();
+  req.session = null;
   res.redirect("/");
 });
 
@@ -20,7 +21,22 @@ router.get("/google", passport.authenticate("google", {
 
 // Set up callback redirect routing back to app after user has been authenticated.
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
+  req.session.token = req.user.token;
   res.redirect("/profile/");
+});
+
+router.get('/', (req, res) => {
+  if (req.session.token) {
+      res.cookie('token', req.session.token);
+      res.json({
+          status: 'session cookie set'
+      });
+  } else {
+      res.cookie('token', '')
+      res.json({
+          status: 'session cookie not set'
+      });
+  }
 });
 
 module.exports = router;
