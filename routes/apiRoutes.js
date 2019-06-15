@@ -14,8 +14,8 @@ module.exports = function (app) {
   // Add new photo pair
   app.post("/api/photos", function (req, res) {
     db.Photo.create({
-      primaryPath: req.body.title,
-      secondPath: req.body.author
+      primaryPath: req.body.primaryPath,
+      secondPath: req.body.secondPath
     }).then(function (photos) {
       res.json(photos);
     });
