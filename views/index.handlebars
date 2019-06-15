@@ -7,7 +7,9 @@
 
         <form class="clearfix mb-4" action="POST">
           <!-- make 2 navigation 'cards' to navigate to vote/battle pages  -->
-          <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
+
+
+          {{!-- <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
             <div class="card">
               <div class="card-body">
 
@@ -20,9 +22,9 @@
 
 
 
-          </div>
+          </div> --}}
 
-          <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
+          {{!-- <div class="col-sm-5 col-lg-3 d-flex align-items-stretch">
             <div class="card">
               <div class="card-body">
 
@@ -35,9 +37,21 @@
 
 
             
+          </div> --}}
+          <div class="row table">
+            <div class="col-lg-6">
+              <a href="/vote" class="btn btn-secondary orange-background"> VOTE <i class="fas fa-vote-yea"></i></i></a>
+
+            </div>
+
+            <div class="col-lg-6">
+              <a href="/battle" class="btn btn-secondary orange-background"> BATTLE <i class="fas fa-gamepad"></i></a>
+            </div>
+
+
           </div>
 
-          
+
 
 
 
@@ -55,18 +69,18 @@
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         
         --}}
-        </form> 
+        </form>
 
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
+        <h3>Examples:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
 
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
