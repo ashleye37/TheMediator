@@ -25,8 +25,7 @@ module.exports = function(app) {
     app.get("/vote", function(req, res) {
       db.Example.findAll({}).then(function(dbExamples) {
       res.render("vote", {
-        msg: "Ready to vote?!",
-        example: dbExample
+        msg: "Ready to vote?!"
       });
     });
   });
@@ -35,8 +34,7 @@ module.exports = function(app) {
   app.get("/battle", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("battle", {
-        msg: "Time to battle!!",
-        example: dbExample
+        msg: "Time to battle!!"
       });
     });
   });
