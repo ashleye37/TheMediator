@@ -1,8 +1,8 @@
 <main>
-  <h1>Welcome to your profile, {{user.username}}></h1>
+  <h1>Welcome to your profile, {{dbUser.username}}></h1>
   <p>
     {{!-- We should be pulling information from SQL with all the photos they have been adding and the stats associated. --}}
-    <img src={{user.thumbnail}}>;
+    <img src={{db.User.thumbnail}}>;
     <p>This is your user thumbnail picture from google.</p>
   </p>
 </main>

@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("passport");
 
 module.exports = function(app) {
   // Load index page
@@ -14,41 +15,45 @@ module.exports = function(app) {
     } else {
     // User is not authenticated, render login page
     res.cookie('token', '')
-    res.render("battle");
+    res.render("login");
     }
   });
+
+  app.get("/login", (req, res) => {
+    res.render("login");
+  })
   
   // Logout route
   app.get('/logout', (req, res) => {
     req.logout(); // Call passport logout method
     req.session = null; // Remove session
-    res.redirect('/'); // Redirect to index route which will show them login template
+    res.redirect("/"); // Redirect to index route which will show them login template
   });
 
   // Load example page and pass in an example by id
-  app.get("/login", function (req, res) {
-    db.User.findOne({ where: { googleId: req.params.id } }).then(function (
+  app.get("/profile/:googleId", function (req, res) {
+    db.User.findAll({ where: { googleId: req.params.googleId } }).then(function (
       dbUser
     ) {
-      res.render("login", {
+      res.render("profile", {
         example: dbUser
       });
+      console.log(dbUser);
     });
   }); 
 
-  // // Load example page and pass in an example by id
-  // app.get("/example/:id", function(req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
+  app.get("/auth/google", 
+  passport.authenticate("google", {
+    scope: ["profile"]
+  }));
 
-  //NEED A PAGE AND ROUTE VOTE PAGE
-  //POPULATE VOTE PAGE
-
-  
+  // Set up callback redirect routing back to app after user has been authenticated.
+  app.get("/auth/google/callback", 
+  passport.authenticate("google", { failureRedirect: "/" }),
+    function (req, res) {
+      req.session.token = req.user.token;
+      res.redirect("/profile/" + req.params.googleId);
+    });
 
   app.get("/vote", function(req, res) {
     res.render("vote");
@@ -58,18 +63,6 @@ module.exports = function(app) {
   app.get("/battle", function(req, res) {
     res.render("battle");
   });
-
-
-
-
-  //  // Load profile page and pass in an profile by id
-  // app.get("/profile/:id", function(req, res) {
-  //   db.Profile.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("profile", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

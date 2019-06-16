@@ -18,7 +18,10 @@ module.exports = function(passport) {
         callbackURL: "http://localhost:3000/auth/google/callback"
       },
       function(accessToken, refreshToken, profile, done) {
-        db.User.findOrCreate({where: { googleId: profile.id, username: profile.displayName, thumbnail: profile._json.picture} })
+        db.User.findOrCreate({where: { 
+          googleId: profile.id, 
+          username: profile.displayName, 
+          thumbnail: profile._json.picture} })
         .then(function() {
           return done(null, {
             profile: profile,
