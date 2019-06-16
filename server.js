@@ -1,44 +1,37 @@
-var express = require("express");
-var app = express();
-var passport = require("passport");
-var session = require("express-session");
-var bodyParser = require("body-parser");
 require("dotenv").config();
+var express = require("express");
 var exphbs = require("express-handlebars");
-var profileRoutes = require("./routes/profile-routes");
-var passportSetup = require("./config/passport-setup");
+var passport = require("passport");
+
+// Cookie packages
+var cookieParser = require("cookie-parser");
+var cookieSession = require("cookie-session");
+
+// Require models for use in app
 var db = require("./models");
-var authRoutes = require("./routes/auth-routes");
 
+var app = express();
 var PORT = process.env.PORT || 3000;
-var session = require("express-session");
 
+// Setting up passport for use.
+require("./config/passport-setup")(passport);
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(passport.initialize());
 app.use(express.static("public"));
 
-//For BodyParser and CookieSession-Parser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Using auth-routes.
-app.use("/auth", authRoutes);
-app.use("/profile", profileRoutes);
-
-// create home route
-app.get('/', function(req, res) {
-  res.render('index');
-});
-
-// Initialize passport
-app.use(session({ secret: "theMediatorisawesome",resave: true, saveUninitialized:true})); // session secret
-app.use(passport.initialize());
-app.use(passport.session());
+// Register cookie packages as middleware
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["123"]
+  })
+);
+app.use(cookieParser());
 
 // Handlebars
-app.set("views", "./views")
 app.engine(
   "handlebars",
   exphbs({
@@ -50,6 +43,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/auth-routes")(app);
  
 
 var syncOptions = { force: false };
