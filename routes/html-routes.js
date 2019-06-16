@@ -14,7 +14,7 @@ module.exports = function(app) {
     } else {
     // User is not authenticated, render login page
     res.cookie('token', '')
-    res.render("/");
+    res.render("battle");
     }
   });
   
@@ -26,15 +26,15 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/profile", function (req, res) {
+  app.get("/login", function (req, res) {
     db.User.findOne({ where: { googleId: req.params.id } }).then(function (
       dbUser
     ) {
-      res.render("profile", {
+      res.render("login", {
         example: dbUser
       });
     });
-  }); */
+  }); 
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
