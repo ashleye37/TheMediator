@@ -30,5 +30,5 @@ $("rightimage").on("click", function () {
     data: winner
   }).then(function (data) {
     console.log(data);
-  }
+  })
 });
