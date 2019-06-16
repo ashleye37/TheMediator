@@ -4,12 +4,16 @@ console.log("hi");
 $("#leftimage").on("click", function (event) {
   event.preventDefault();
   console.log("hello!!!!");
-  
+
   var winner = {
     winner: "left"
   }
 
-  $.put("api/photos", winner).then(function (data) {
+  $.ajax({
+    type: "PUT",
+    url: "api/photos",
+    data: winner
+  }).then(function (data) {
     console.log(data);
   }
 
