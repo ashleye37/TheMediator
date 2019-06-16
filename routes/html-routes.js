@@ -19,6 +19,7 @@ module.exports = function(app) {
     }
   });
 
+  // Route to Login page.
   app.get("/login", (req, res) => {
     res.render("login");
   })
@@ -30,18 +31,16 @@ module.exports = function(app) {
     res.redirect("/"); // Redirect to index route which will show them login template
   });
 
-  // Load example page and pass in an example by id
+  // Load profile page and pass in an example by id
   app.get("/profile/:googleId", function (req, res) {
-    db.User.findAll({ where: { googleId: req.params.googleId } }).then(function (
-      dbUser
-    ) {
+    db.User.findAll({googleId: req.params.googleId}).then(function (dbUser) {
       res.render("profile", {
         example: dbUser
       });
-      console.log(dbUser);
     });
   }); 
 
+  // Authentication route - routing to google.
   app.get("/auth/google", 
   passport.authenticate("google", {
     scope: ["profile"]
@@ -51,15 +50,17 @@ module.exports = function(app) {
   app.get("/auth/google/callback", 
   passport.authenticate("google", { failureRedirect: "/" }),
     function (req, res) {
+      var googleId = res.req.user.profile.id;
       req.session.token = req.user.token;
-      res.redirect("/profile/" + req.params.googleId);
+      res.redirect("/profile/" + googleId);
     });
 
+  // Routing to voting page.
   app.get("/vote", function(req, res) {
     res.render("vote");
   });
 
-
+  // Routing to battle page.
   app.get("/battle", function(req, res) {
     res.render("battle");
   });
