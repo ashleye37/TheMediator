@@ -1,6 +1,5 @@
 console.log("hi");
 
-
 $("#leftimage").on("click", function (event) {
   event.preventDefault();
   console.log("hello!!!!");
@@ -21,8 +20,15 @@ $("#leftimage").on("click", function (event) {
 });
 
 $("rightimage").on("click", function () {
+  var winner = {
+    winner: "right"
+  }
+
   $.ajax({
+    type: "PUT",
     url: "api/photos",
-    type: "PUT"
-  });
+    data: winner
+  }).then(function (data) {
+    console.log(data);
+  }
 });
