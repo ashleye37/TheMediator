@@ -23,9 +23,10 @@ module.exports = function (app) {
 
   // Update scores
   app.put("/api/photos", function(req, res) {
+    
     db.Photo.update(
       { primaryWins: 1  },
-      {where: {id: 1}}).then(function(photos){
+      {where: {id: req.body.id}}).then(function(photos){
       res.json(photos);
     });
   });
