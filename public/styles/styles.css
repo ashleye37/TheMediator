@@ -9,13 +9,24 @@ lavender: #E6E6FA
 #4F4F80
 #BCBCCC
 */
+/* .navbar{
+  width: 100%;
+} */
 
+.main-img{
+justify-content: center;
+}
 body{
   height: 100%;
   background-color: #EBEBFF;
   font-family: 'Special Elite', cursive;
   color: #4f4f80;
 
+}
+img{
+  vertical-align: middle;
+  border-radius: 50%;
+  block-size: 50%;
 }
 h1, h2, h3{
   text-align: center;
@@ -32,6 +43,7 @@ nav {
   margin-bottom: 20px;
   justify-content: center;
   align-content: center;
+  width:100%;
 
 }
 
