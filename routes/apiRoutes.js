@@ -22,12 +22,36 @@ module.exports = function (app) {
   });
 
   // Update scores
-  app.put("/api/photos", function(req, res) {
-    db.Photo.update({
-      primaryWins: req.body.primaryWins,
-      secondWins: req.body.secondWins
-    }).then(function(photos){
-      res.json(photos);
+  app.put("/api/photos", function (req, res) {
+    //get current win totals
+    db.Photo.findAll({
+      where: {
+        id: req.body.id
+      }
+    }).then(function (data) {
+      console.log("Data: ");
+      console.log(data[0].id);
+
+      //if left won, add 1 and update primary wins
+      if (req.body.winner === "left") {
+        var newWins = data[0].primaryWins + 1;
+        db.Photo.update(
+          { primaryWins: newWins },
+          { where: { id: req.body.id } }).then(function (photos) {
+            res.json(photos);
+          });
+      } 
+      //update secondary wins if right won
+      else if (req.body.winner === "right") {
+        console.log("right won");
+        
+        var newWins = data[0].secondWins + 1;
+        db.Photo.update(
+          { secondWins: newWins },
+          { where: { id: req.body.id } }).then(function (photos) {
+            res.json(photos);
+          });
+      }
     });
   });
 };

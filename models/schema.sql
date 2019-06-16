@@ -12,7 +12,7 @@ CREATE TABLE photos (
 
 CREATE TABLE user (
   userId INT(11) AUTO_INCREMENT NOT NULL,
-  googleId INT(30),
+  googleId VARCHAR (30),
   username VARCHAR (30) NOT NULL,
   thumbnail VARCHAR(55),
   basicCount INT NOT NULL DEFAULT 0,
