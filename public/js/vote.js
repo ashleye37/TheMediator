@@ -33,11 +33,13 @@ $("#leftimage").on("click", function (event) {
   )
 });
 
-$("rightimage").on("click", function () {
+$("#rightimage").on("click", function () {
   var winner = {
     winner: "right",
     id: $(this).data("id")
   }
+  console.log("right won");
+  
 
   $.ajax({
     type: "PUT",

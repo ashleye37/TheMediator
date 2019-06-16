@@ -40,7 +40,11 @@ module.exports = function (app) {
           { where: { id: req.body.id } }).then(function (photos) {
             res.json(photos);
           });
-      } else if (req.body.winner === "right") {
+      } 
+      //update secondary wins if right won
+      else if (req.body.winner === "right") {
+        console.log("right won");
+        
         var newWins = data[0].secondWins + 1;
         db.Photo.update(
           { secondWins: newWins },
