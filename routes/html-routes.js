@@ -34,7 +34,7 @@ module.exports = function(app) {
         example: dbUser
       });
     });
-  });
+  }); */
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
@@ -47,23 +47,16 @@ module.exports = function(app) {
 
   //NEED A PAGE AND ROUTE VOTE PAGE
   //POPULATE VOTE PAGE
-    app.get("/vote/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("vote", {
-        msg: "Ready to vote?!",
-        example: dbExample
-      });
-    });
+
+  
+
+  app.get("/vote", function(req, res) {
+    res.render("vote");
   });
 
 
   app.get("/battle", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("vote", {
-        msg: "Time to battle!!",
-        example: dbExample
-      });
-    });
+    res.render("battle");
   });
 
 
