@@ -12,7 +12,12 @@ lavender: #E6E6FA
 /* .navbar{
   width: 100%;
 } */
-
+.gavel{
+height:350px;
+width: auto;
+margin-bottom: 20px;
+margin-top: 20px;
+}
 .main-img{
 justify-content: center;
 }
@@ -43,7 +48,7 @@ nav {
   margin-bottom: 20px;
   justify-content: center;
   align-content: center;
-  width:100%;
+
 
 }
 
