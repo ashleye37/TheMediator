@@ -1,13 +1,26 @@
+
+/* 
+colors:
+"Lavender is a color that releases the most serotonin in the brain, therefore assists people who suffer from depression. It has relaxing properties"
+
+lavender: #E6E6FA
+#9E9EFF
+#EBEBFF
+#4F4F80
+#BCBCCC
+*/
+
 body{
   height: 100%;
-
   background-color: #EBEBFF;
   font-family: 'Special Elite', cursive;
   color: #4f4f80;
 
 }
-h2, h3{
+h1, h2, h3{
   text-align: center;
+  
+  font-family: 'Permanent Marker', cursive;
 }
 
 .icon{
@@ -40,15 +53,27 @@ nav {
     width: 100%;
     margin: 5px;
 
-};
+}
 
-/* 
-colors:
-"Lavender is a color that releases the most serotonin in the brain, therefore assists people who suffer from depression. It has relaxing properties"
+/* inverse colors on hover */
+.btn:hover {
+  color: #BCBCCC;
+  border-color: currentColor;
+  background-color: white;
+}
 
-lavender: #E6E6FA
-#9E9EFF
-#EBEBFF
-#4F4F80
-#BCBCCC
-*/
+/* make sure we have a visible focus ring */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4f4f80,
+    0 0 0 1.5px #BCBCCC;
+}
+
+.card {  
+  max-width: 800px;
+  
+  box-shadow: 10px 10px 5px grey;
+}
+
+
+
