@@ -1,4 +1,6 @@
 //call post route
-$("#button").on("click", function(){
-  
+$("#submit-form").on("submit", function(){
+  var urls = {
+    primaryPath: 
+  };
 })
