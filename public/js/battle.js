@@ -2,7 +2,7 @@
 $("#submit-form").on("submit", function(){
   var urls = {
     primaryPath: $("#url").val(),
-    secondPath: $("#url2").val()
+    secondPath: $("#url1").val()
   };
 
   $.ajax({
