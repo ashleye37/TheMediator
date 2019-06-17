@@ -36,7 +36,6 @@ $("#nextbutton").on("click", function(event) {
 
 $("#leftimage").on("click", function (event) {
   event.preventDefault();
-  console.log("hello!!!!");
 
   var winner = {
     winner: "left",
@@ -62,8 +61,6 @@ $("#rightimage").on("click", function () {
     winner: "right",
     id: $(this).data("id")
   }
-  console.log("right won");
-
 
   $.ajax({
     type: "PUT",
