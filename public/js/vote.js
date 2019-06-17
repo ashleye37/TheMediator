@@ -14,6 +14,8 @@ $.ajax({
   console.log(data);
   $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
   $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
+  $("#opt1").attr("data-id", data.id).attr("data-wins", data.primaryWins);
+  $("#opt2").attr("data-id", data.id).attr("data-wins", data.secondWins);
 });
 
 $("#nextbutton").on("click", function(event) {
@@ -27,6 +29,8 @@ $("#nextbutton").on("click", function(event) {
     console.log(data);
     $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
     $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
+    $("#opt1").attr("data-id", data.id).attr("data-wins", data.primaryWins);
+    $("#opt2").attr("data-id", data.id).attr("data-wins", data.secondWins);
 
     //clear scores from prior images
     $("#leftwins").text("");
@@ -34,12 +38,12 @@ $("#nextbutton").on("click", function(event) {
   });
 })
 
-$("#leftimage, #opt1").on("click", function (event) {
+$(".left-vote").on("click", function (event) {
   event.preventDefault();
 
   var winner = {
     winner: "left",
-    id: $(this).data("id")
+    id: $("#leftimage").data("id")
   }
   console.log(winner);
 
@@ -50,18 +54,18 @@ $("#leftimage, #opt1").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").data("wins"), $("#rightimage").data("wins"));
+    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
   }
 
   )
 });
 
-$("#rightimage, #opt2").on("click", function (event) {
+$(".right-vote").on("click", function (event) {
   event.preventDefault();
   
   var winner = {
     winner: "right",
-    id: $(this).data("id")
+    id: $("#rightimage").data("id")
   }
 
   $.ajax({
@@ -70,6 +74,6 @@ $("#rightimage, #opt2").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").data("wins"), $("#rightimage").data("wins"));
+    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
   })
 });
