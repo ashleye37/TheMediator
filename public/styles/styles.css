@@ -95,6 +95,8 @@ nav {
 }
 
 .card-img-top{
+  object-fit: contain;
+  width: auto;
   margin-left: 24px;
   margin-top: 20px;
   border-radius: 19px;
