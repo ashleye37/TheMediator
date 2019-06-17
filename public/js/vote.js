@@ -54,7 +54,7 @@ $(".left-vote").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").data("wins"), $("#rightimage").data("wins"));
+    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
   }
 
   )
@@ -74,6 +74,6 @@ $(".right-vote").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").data("wins"), $("#rightimage").data("wins"));
+    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
   })
 });
