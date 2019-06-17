@@ -20,9 +20,13 @@ margin-top: 20px;
 border-radius: 50%;
 
 }
+h3{
+  color:#EBEBFF;
+}
 
-
-
+.nav-item{
+  justify-self: center;
+}
 .main-img{
 justify-content: center;
 }
