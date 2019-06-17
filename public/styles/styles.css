@@ -32,7 +32,7 @@ body{
 }
 img{
   vertical-align: middle;
-  block-size: 50%;
+  block-size: 75%;
 }
 h1, h2, h3, h5{
   text-align: center;
@@ -93,14 +93,17 @@ nav {
 }
 
 .card-img-top{
-  margin-left: 24px;
-  margin-top: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
   border-radius: 19px;
 }
 .card {  
   max-width: 800px;
   align-content: center;
   box-shadow: 10px 10px 5px grey;
+  justify-content: center;
+
 }
 
 .row, .card-body{
