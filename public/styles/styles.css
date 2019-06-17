@@ -55,6 +55,8 @@ nav {
 #leftimage, #rightimage{
   max-width: 400px;
   max-height: 400px;
+  width: auto;
+  margin: 0;
 }
 
 .list-group-item {
