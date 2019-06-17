@@ -1,39 +1,26 @@
 # TheMediator
 
-Welcome to The Mediator App! 
+Welcome to The Mediator App! Have you ever been in a conversation with a friend and disagreed which of something was better? This could be food, brands, animals... etc. Well look no further, with the Mediator you are able to submit two photos of what you are disagreeing on and allow the public to vote on it to settle things once and for all! 
 
-Users will be able to visit The Mediator site and set up an account. After this is completed they will be prompted to go to vote or battle mode. 
+Not up for a battle? No problem! Click on vote mode from the home page to see pairs of photos already submitted to TheMediator and weigh in by clicking on your favorite of the two. 
 
-In vote mode, the user will be shown two photos. They can then click on the photo that they prefer which will give that photo their vote and display the percentage of votes that each photo has received and then will display the next two photos to vote on. 
+## Technologies Used
 
-In battle mode, users will be allowed to submit two photos of their own that will be added to the database of photos and displayed to other users and voted on. The user will also be able to click of their profile for a recap of the photos they have submitted and the votes that have been made on these photos.
+	- Node
+	- Express
+	- Sequelize
+	- Handlebars
+	- Passport
+	- MySQL
+	- Bootstrap
+	- Google Auth
 
-## Table of Contents
+## Code Explanation/Demo
+	- Users will be able to visit The Mediator site and first be prompted to set up an account using Google. After this is complete, they will be able to select whether to enter vote or battle mode. 
 
-	- [Installation](#installation)
-	- [Usage](#usage)
-	- [Support](#support)
-	- [Contributing](#contributing)
+	- In vote mode, users will be shown two photos. They can then click on the photo that they prefer which will give that photo their vote and display the percentage of votes that each photo has received and then will display the next two photos to vote on. 
 
-## Installation
+	- In battle mode, users will be allowed to submit two photos of their own that will be added to the database of photos and displayed to other users to voted on as well.
 
-Download to your project directory, add `README.md`, and commit:
-
-
-## Usage
-
-Replace the contents of `README.md` with your project's:
-
-	- Name
-	- Description
-	- Installation instructions
-	- Usage instructions
-	- Support instructions
-	- Contributing instructions
-
-Feel free to remove any sections that aren't applicable to your project.
-
-## Support
-
-Please [open an issue](https://github.com/fraction/readme-boilerplate/issues/new) for support.
+	- Future development, adding a profile that will show users all the pairs of photos they have submitted for battle and the votes that each have received by the public. 
 
