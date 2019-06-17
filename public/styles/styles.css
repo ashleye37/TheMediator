@@ -24,7 +24,7 @@ justify-content: center;
 body{
   height: 100%;
   background-color: #EBEBFF;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Lato', sans-serif;
   color: #4f4f80;
 
 }
@@ -36,7 +36,7 @@ img{
 h1, h2, h3{
   text-align: center;
   
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Lato', sans-serif;
 }
 
 .icon{
@@ -65,8 +65,8 @@ nav {
 }
 .btn{
   background-color: #4f4f80;
-    font-family: 'Special Elite', cursive;
-    font-size: large;
+  font-family: 'Lato', sans-serif;
+  font-size: large;
     color: #EBEBFF;
     width: 100%;
     margin: 5px;
