@@ -1,7 +1,7 @@
 //call post route
 $("#submit-form").on("submit", function(){
   var urls = {
-    primaryPath: $("#url").val(),
+    primaryPath: $("#url1").val(),
     secondPath: $("#url2").val()
   };
 
@@ -10,6 +10,6 @@ $("#submit-form").on("submit", function(){
     url: "api/photos",
     data: urls
   }).then(function(){
-    alert("Successfully submitted!")
+    alert("Successfully submitted!");
   });
 })
