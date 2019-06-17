@@ -4,11 +4,11 @@
 
 <div class="row">
 
-
+<form id="submit-form">
   <div class="col-lg-6" id="left_image">
     <div class="form-group">
       <label for="exampleFormControlFile1">Your first image to compare: </label>
-      <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+      <input type="url" name="url" id="url1" placeholder="https://example.com" pattern="https://.*" size="30" required>
     </div>
   </div>
 
@@ -16,11 +16,14 @@
   <div class="col-lg-6" id="right_image">
     <div class="form-group">
       <label for="exampleFormControlFile1">Your second image to compare:</label>
-      <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+      <input type="url" name="url" id="url2" placeholder="https://example.com" pattern="https://.*" size="30" required>
     </div>
   </div>
-
+  <button type="submit" class="btn btn-primary" id="button">Submit</button>
+</form>
 </div>
+
+<script src="/js/battle.js"></script>
 
 {{!-- on submit click
 

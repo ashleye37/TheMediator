@@ -9,7 +9,18 @@ lavender: #E6E6FA
 #4F4F80
 #BCBCCC
 */
-
+/* .navbar{
+  width: 100%;
+} */
+.gavel{
+height:350px;
+width: auto;
+margin-bottom: 20px;
+margin-top: 20px;
+}
+.main-img{
+justify-content: center;
+}
 body{
   height: 100%;
   background-color: #EBEBFF;
@@ -17,10 +28,19 @@ body{
   color: #4f4f80;
 
 }
+img{
+  vertical-align: middle;
+  border-radius: 50%;
+  block-size: 50%;
+}
 h1, h2, h3{
   text-align: center;
   
   font-family: 'Permanent Marker', cursive;
+}
+
+.icon{
+  text-align: center;
 }
 nav {
   margin-right: 20%;
@@ -28,6 +48,7 @@ nav {
   margin-bottom: 20px;
   justify-content: center;
   align-content: center;
+
 
 }
 

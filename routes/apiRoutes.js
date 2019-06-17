@@ -31,7 +31,6 @@ module.exports = function (app) {
     }).then(function (data) {
       console.log("Data: ");
       console.log(data[0].id);
-
       //if left won, add 1 and update primary wins
       if (req.body.winner === "left") {
         var newWins = data[0].primaryWins + 1;
