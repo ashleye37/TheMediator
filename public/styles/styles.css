@@ -17,6 +17,8 @@ height:350px;
 width: auto;
 margin-bottom: 20px;
 margin-top: 20px;
+border-radius: 50%;
+
 }
 .main-img{
 justify-content: center;
@@ -30,7 +32,6 @@ body{
 }
 img{
   vertical-align: middle;
-  border-radius: 50%;
   block-size: 50%;
 }
 h1, h2, h3, h5{
@@ -94,6 +95,7 @@ nav {
 .card-img-top{
   margin-left: 24px;
   margin-top: 20px;
+  border-radius: 19px;
 }
 .card {  
   max-width: 800px;
