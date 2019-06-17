@@ -54,11 +54,13 @@ module.exports = function(app) {
 
   // Routing to voting page.
   app.get("/vote", function(req, res) {
+    console.log("I am trying to get to vote page.")
     res.render("vote");
   });
 
   // Routing to battle page.
   app.get("/battle", function(req, res) {
+    console.log("I am trying to get to the battle page.")
     res.render("battle");
   });
 

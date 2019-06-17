@@ -15,13 +15,13 @@ module.exports = function(passport) {
       {
         clientID: "745284407478-76oas8emi71h9t27idjf4p6419t1d35s.apps.googleusercontent.com",
         clientSecret: "PH-P51NHpmLdYMU6jbcJziZu",
-        callbackURL: "http://project2-teamproject.herokuapp.com/auth/google/callback" || "http://localhost:3000/auth/google/callback"
+        callbackURL:  "http://localhost:3000/auth/google/callback"
       },
       function(accessToken, refreshToken, profile, done) {
-        db.User.findOrCreate({where: { 
+        db.User.findOrCreate({ where: {
           googleId: profile.id, 
           username: profile.displayName, 
-          thumbnail: profile._json.picture} })
+          thumbnail: profile._json.picture }})
         .then(function() {
           return done(null, {
             profile: profile,
@@ -32,3 +32,4 @@ module.exports = function(passport) {
     )
   );
 };
+// "http://project2-teamproject.herokuapp.com/auth/google/callback" ||
