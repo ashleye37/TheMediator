@@ -5,19 +5,11 @@ module.exports = function(app) {
 
   // Routing to voting page.
   app.get("/vote", function(req, res) {
-<<<<<<< HEAD
-=======
-    console.log("I am trying to get to vote page.")
->>>>>>> aa6bdd8fb5f1df0d2f5cf5cb3c884b684f098d61
     res.render("vote");
   });
 
   // Routing to battle page.
   app.get("/battle", function(req, res) {
-<<<<<<< HEAD
-=======
-    console.log("I am trying to get to the battle page.")
->>>>>>> aa6bdd8fb5f1df0d2f5cf5cb3c884b684f098d61
     res.render("battle");
   });
 
