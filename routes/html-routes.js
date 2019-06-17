@@ -5,12 +5,14 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     if(req.session.token) {
+      console.log("*******************");
       db.User.findAll({}).then(function(dbUser) {
         res.cookie('token', req.session.token); // Send session token back to client
         res.render("index");
       });
     } else {
     // User is not authenticated, render login page
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     res.cookie('token', '')
     res.render("login");
     }

@@ -10,11 +10,9 @@ CREATE TABLE photos (
   userId VARCHAR(55)
 );
 
-CREATE TABLE user (
+CREATE TABLE User (
   userId INT(11) AUTO_INCREMENT NOT NULL,
   googleId VARCHAR (30),
   username VARCHAR (30) NOT NULL,
-  thumbnail VARCHAR(55),
-  basicCount INT NOT NULL DEFAULT 0,
-  weirdCount INT NOT NULL DEFAULT 0
+  thumbnail VARCHAR(55)
 );
