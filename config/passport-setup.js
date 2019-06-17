@@ -15,7 +15,7 @@ module.exports = function(passport) {
       {
         clientID: "745284407478-76oas8emi71h9t27idjf4p6419t1d35s.apps.googleusercontent.com",
         clientSecret: "PH-P51NHpmLdYMU6jbcJziZu",
-        callbackURL: "http://project2-teamproject.herokuapp.com/auth/google/callback"
+        callbackURL: "http://project2-teamproject.herokuapp.com/auth/google/callback" || "http://localhost:3000/auth/google/callback"
       },
       function(accessToken, refreshToken, profile, done) {
         db.User.findOrCreate({where: { 

@@ -5,15 +5,14 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     if(req.session.token) {
+      console.log("*******************");
       db.User.findAll({}).then(function(dbUser) {
         res.cookie('token', req.session.token); // Send session token back to client
-        res.render("index", {
-          msg: "Welcome!",
-          examples: dbUser
-        });
+        res.render("index");
       });
     } else {
     // User is not authenticated, render login page
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     res.cookie('token', '')
     res.render("login");
     }
@@ -32,11 +31,9 @@ module.exports = function(app) {
   });
 
   // Load profile page and pass in an example by id
-  app.get("/profile/:googleId", function (req, res) {
+  app.get("/:googleId", function (req, res) {
     db.User.findAll({googleId: req.params.googleId}).then(function (dbUser) {
-      res.render("profile", {
-        example: dbUser
-      });
+      res.render("index");
     });
   }); 
 
@@ -52,7 +49,7 @@ module.exports = function(app) {
     function (req, res) {
       var googleId = res.req.user.profile.id;
       req.session.token = req.user.token;
-      res.redirect("/profile/" + googleId);
+      res.redirect("/index" + googleId);
     });
 
   // Routing to voting page.
