@@ -10,6 +10,6 @@ $("#submit-form").on("submit", function(){
     url: "api/photos",
     data: urls
   }).then(function(){
-    alert("Successfully submitted!")
+    alert("Successfully submitted!");
   });
 })
