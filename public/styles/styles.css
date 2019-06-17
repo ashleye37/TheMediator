@@ -60,6 +60,7 @@ nav {
   /* border: 5px solid #4F4F80; */
   border-radius: 14px;
   margin: 15px;
+  justify-content: center;
 
 }
 .btn{
