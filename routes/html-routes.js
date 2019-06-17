@@ -2,20 +2,17 @@ var db = require("../models");
 var passport = require("passport");
 
 module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    if(req.session.token) {
-      console.log("*******************");
-      db.User.findAll({}).then(function(dbUser) {
-        res.cookie('token', req.session.token); // Send session token back to client
-        res.render("index");
-      });
-    } else {
-    // User is not authenticated, render login page
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    res.cookie('token', '')
-    res.render("login");
-    }
+
+  // Routing to voting page.
+  app.get("/vote", function(req, res) {
+    console.log("I am trying to get to vote page.")
+    res.render("vote");
+  });
+
+  // Routing to battle page.
+  app.get("/battle", function(req, res) {
+    console.log("I am trying to get to the battle page.")
+    res.render("battle");
   });
 
   // Route to Login page.
@@ -52,18 +49,21 @@ module.exports = function(app) {
       res.redirect("/index" + googleId);
     });
 
-  // Routing to voting page.
-  app.get("/vote", function(req, res) {
-    console.log("I am trying to get to vote page.")
-    res.render("vote");
+      // Load index page
+  app.get("/", function(req, res) {
+    if(req.session.token) {
+      console.log("*******************");
+      db.User.findAll({}).then(function(dbUser) {
+        res.cookie('token', req.session.token); // Send session token back to client
+        res.render("index");
+      });
+    } else {
+    // User is not authenticated, render login page
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    res.cookie('token', '')
+    res.render("login");
+    }
   });
-
-  // Routing to battle page.
-  app.get("/battle", function(req, res) {
-    console.log("I am trying to get to the battle page.")
-    res.render("battle");
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
