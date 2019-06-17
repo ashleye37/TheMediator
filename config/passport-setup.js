@@ -18,10 +18,10 @@ module.exports = function(passport) {
         callbackURL: "http://project2-teamproject.herokuapp.com/auth/google/callback" || "http://localhost:3000/auth/google/callback"
       },
       function(accessToken, refreshToken, profile, done) {
-        db.User.findOrCreate({where: { 
+        db.User.findOrCreate({ where: {
           googleId: profile.id, 
           username: profile.displayName, 
-          thumbnail: profile._json.picture} })
+          thumbnail: profile._json.picture }})
         .then(function() {
           return done(null, {
             profile: profile,
