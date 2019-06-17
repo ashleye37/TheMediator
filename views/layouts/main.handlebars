@@ -25,10 +25,10 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a id="loginbutton" class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
+          <a id="logoutbutton" class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
     </div>
@@ -39,6 +39,18 @@
   {{{body}}}
 
   <script src="https://kit.fontawesome.com/3750dcfcd2.js"></script>
+
+  <script>
+    var hidden = false;
+    function action() {
+        hidden = !hidden;
+        if(hidden) {
+            document.getElementById('loginbutton').style.visibility = 'hidden';
+        } else {
+            document.getElementById('logoutbutton').style.visibility = 'visible';
+        }
+    }
+  </script>
 
 </body>
 
