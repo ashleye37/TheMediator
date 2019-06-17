@@ -15,7 +15,9 @@ module.exports = function (app) {
   app.post("/api/photos", function (req, res) {
     db.Photo.create({
       primaryPath: req.body.primaryPath,
-      secondPath: req.body.secondPath
+      secondPath: req.body.secondPath,
+      primaryWins: 0,
+      secondWins: 0
     }).then(function (photos) {
       res.json(photos);
     });

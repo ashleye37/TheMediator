@@ -1,7 +1,7 @@
 console.log("hi");
 
 //function to display wins
-var displayWins = function(left, right) {
+var displayWins = function (left, right) {
   $("#leftwins").text(String(left));
   $("#rightwins").text(String(right));
 }
@@ -10,23 +10,39 @@ var displayWins = function(left, right) {
 $.ajax({
   type: "GET",
   url: "api/photos"
-}).then(function(data){
+}).then(function (data) {
   console.log(data);
   $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
   $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
-  
+});
+
+$("#nextbutton").on("click", function(event) {
+  event.preventDefault();
+
+  //call new random set of images
+  $.ajax({
+    type: "GET",
+    url: "api/photos"
+  }).then(function (data) {
+    console.log(data);
+    $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
+    $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
+
+    //clear scores from prior images
+    $("#leftwins").text("");
+    $("#rightwins").text("");
+  });
 })
 
-$("#leftimage").on("click", function (event) {
+$(".left-vote").on("click", function (event) {
   event.preventDefault();
-  console.log("hello!!!!");
 
   var winner = {
     winner: "left",
     id: $(this).data("id")
   }
   console.log(winner);
-  
+
 
   $.ajax({
     type: "PUT",
@@ -40,13 +56,13 @@ $("#leftimage").on("click", function (event) {
   )
 });
 
-$("#rightimage").on("click", function () {
+$(".right-vote").on("click", function (event) {
+  event.preventDefault();
+  
   var winner = {
     winner: "right",
     id: $(this).data("id")
   }
-  console.log("right won");
-  
 
   $.ajax({
     type: "PUT",
