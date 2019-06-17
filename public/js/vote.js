@@ -14,6 +14,8 @@ $.ajax({
   console.log(data);
   $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
   $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
+  $("#opt1").attr("data-id", data.id).attr("data-wins", data.primaryWins);
+  $("#opt2").attr("data-id", data.id).attr("data-wins", data.secondWins);
 });
 
 $("#nextbutton").on("click", function(event) {
@@ -27,6 +29,8 @@ $("#nextbutton").on("click", function(event) {
     console.log(data);
     $("#leftimage").attr("src", data.primaryPath).attr("data-id", data.id).attr("data-wins", data.primaryWins);
     $("#rightimage").attr("src", data.secondPath).attr("data-id", data.id).attr("data-wins", data.secondWins);
+    $("#opt1").attr("data-id", data.id).attr("data-wins", data.primaryWins);
+    $("#opt2").attr("data-id", data.id).attr("data-wins", data.secondWins);
 
     //clear scores from prior images
     $("#leftwins").text("");
