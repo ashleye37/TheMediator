@@ -34,7 +34,7 @@ $("#nextbutton").on("click", function(event) {
   });
 })
 
-$("#leftimage").on("click", function (event) {
+$("#leftimage, #opt1").on("click", function (event) {
   event.preventDefault();
 
   var winner = {
@@ -56,7 +56,7 @@ $("#leftimage").on("click", function (event) {
   )
 });
 
-$("#rightimage").on("click", function () {
+$("#rightimage, #opt2").on("click", function () {
   var winner = {
     winner: "right",
     id: $(this).data("id")
