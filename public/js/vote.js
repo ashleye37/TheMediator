@@ -43,7 +43,7 @@ $(".left-vote").on("click", function (event) {
 
   var winner = {
     winner: "left",
-    id: $(this).data("id")
+    id: $("#leftimage").data("id")
   }
   console.log(winner);
 
@@ -65,7 +65,7 @@ $(".right-vote").on("click", function (event) {
   
   var winner = {
     winner: "right",
-    id: $(this).data("id")
+    id: $("#rightimage").data("id")
   }
 
   $.ajax({
