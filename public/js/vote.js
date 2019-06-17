@@ -18,7 +18,7 @@ $.ajax({
   $("#opt2").attr("data-id", data.id).attr("data-wins", data.secondWins);
 });
 
-$("#nextbutton").on("click", function(event) {
+$("#nextbutton").on("click", function (event) {
   event.preventDefault();
 
   //call new random set of images
@@ -54,15 +54,15 @@ $(".left-vote").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
   }
 
   )
+  displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
 });
 
 $(".right-vote").on("click", function (event) {
   event.preventDefault();
-  
+
   var winner = {
     winner: "right",
     id: $("#rightimage").attr("data-id")
@@ -74,6 +74,6 @@ $(".right-vote").on("click", function (event) {
     data: winner
   }).then(function (data) {
     console.log(data);
-    displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
-  })
+  });
+  displayWins($("#leftimage").attr("data-wins"), $("#rightimage").attr("data-wins"));
 });
