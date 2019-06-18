@@ -2,8 +2,8 @@ console.log("hi");
 
 //function to display wins
 var displayWins = function (left, right) {
-  var leftPercent = (left / (left + right) * 100).toFixed(0);
-  var rightPercent = (right / (left + right) * 100).toFixed(0);
+  var leftPercent = (left / (left + right) * 100).toFixed(2);
+  var rightPercent = (right / (left + right) * 100).toFixed(2);
   
   $("#leftwins").text(String(leftPercent) + "%");
   $("#rightwins").text(String(rightPercent) + "%");
