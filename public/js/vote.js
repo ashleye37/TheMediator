@@ -2,8 +2,11 @@ console.log("hi");
 
 //function to display wins
 var displayWins = function (left, right) {
-  $("#leftwins").text(String(left));
-  $("#rightwins").text(String(right));
+  var leftPercent = (left * 100 / (left + right)).toFixed(2);
+  var rightPercent = (right * 100/ (left + right)).toFixed(2);
+  
+  $("#leftwins").text(String(leftPercent) + "%");
+  $("#rightwins").text(String(rightPercent) + "%");
 }
 
 //load first image
