@@ -102,9 +102,10 @@ nav {
 }
 
 .card-img-top{
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
+  object-fit: contain;
+  width: auto;
+  margin-left: 24px;
+  margin-top: 20px;
   border-radius: 19px;
   height: 350px; 
 }
