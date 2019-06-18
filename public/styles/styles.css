@@ -20,6 +20,13 @@ margin-top: 20px;
 border-radius: 50%;
 
 }
+h3{
+  color:#EBEBFF;
+}
+
+.nav-item{
+  justify-self: center;
+}
 .main-img{
 justify-content: center;
 }
@@ -32,7 +39,7 @@ body{
 }
 img{
   vertical-align: middle;
-  block-size: 50%;
+  block-size: 75%;
 }
 h1, h2, h3, h5{
   text-align: center;
@@ -106,6 +113,8 @@ nav {
   max-width: 800px;
   align-content: center;
   box-shadow: 10px 10px 5px grey;
+  justify-content: center;
+
 }
 
 .row, .card-body{
